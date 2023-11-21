@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Message Box</title>
+    <style>
+        .message-box {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <!-- ... (form fields) ... -->
+
+        <div id="messageBox" class="message-box"></div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            // ... (validation logic)
+
+            // Display a message in the message box
+            var messageBox = document.getElementById('messageBox');
+            messageBox.innerHTML = 'Form submitted successfully.';
+            messageBox.className = 'message-box success';
+
+            // Prevent form submission for this example
+            return false;
+        }
+    </script>
+
+</body>
+</html>
